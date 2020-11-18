@@ -48,8 +48,8 @@ h1 {
 	color: #FFF;
 	text-shadow: 0 0 5px rgba(255, 255, 255, 0.73);
 	padding: 0.3em 0.5em;
-	background: #00bcd4;
-	border: solid 3px #00a3d4;
+	background: #d40035;
+	border: solid 3px #fff;
 	margin:100px 100px 100px 100px;
 	transition: .4s;
 }
