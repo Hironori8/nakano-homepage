@@ -1,12 +1,15 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import {BrowserRouter,Route,Link} from 'react-router-dom'
 import Icon from './mypicture.jpg'
 import './index.css'
 import GitHubButton from 'react-github-btn'
-import ReactTwitterFollowButton from 'react-twitter-follow-button';
+// import ReactTwitterFollowButton from 'react-twitter-follow-button';
+import {Follow} from 'react-twitter-widgets'
 import InstagramButton from  "react-instagram-button";
 
-function LinkButton(){
+
+const LinkButton = () =>{
 	return(
 		<div className='link-list'>
 			<div className='link-list-0'>
@@ -19,11 +22,7 @@ function LinkButton(){
 
 			</div>
 			<div className='link-list-0'>
-				<ReactTwitterFollowButton 
-					twitterAccount='nori_nori_8' 
-					showLarge={true} 
-					showName={true} 
-					showCount={false} />
+				<Follow username='nori_nori_8'/>
 			</div>
 			<div className='link-list-1'>
 				<InstagramButton 
@@ -32,32 +31,78 @@ function LinkButton(){
 		</ div>
 
 	);
-}
+};
 
-function Picture(){
+const Picture = () => {
 	return(
 		<div className='mypicture'>
 			<img src={Icon}/>
 		</div>
 	);
-}
+};
 
-class MainPage extends React.Component {
-	render(){
-		return(
-			<div className='MainPage'> 
-				<h1>Hironori Nakano</h1>
-				<div className='wrapper'>
-					<Picture/>
-					<div className='list'>
-						<a href="#" className="btn-sf-like">Carrer</a>
-						<a href="#" className="btn-sf-like">Research</a>
-						<LinkButton />
-					</div>
+const MainPage = () =>{
+	return(
+		<div className='MainPage'> 
+			<h1>Hironori Nakano</h1>
+			<div className='wrapper'>
+				<Picture/>
+				<div className='list'>
+					<Link to='/pagecarrer'>
+						<button className="btn-sf-like">Carrer</button>
+					</Link>
+					<Link to='/pagereseach'>
+					<button className="btn-sf-like">Research</button>
+					</Link>
+					<LinkButton />
 				</div>
 			</div>
-		)
-	}
-}
+		</div>
+	);
+};
 
-ReactDOM.render(<MainPage />,document.getElementById('root'))
+const CarrerPage = () =>{
+	return(
+		<div className='CarrerPage'> 
+			<h1>Carrer</h1>
+			<div className='wrapper'>
+				<div className='list'>
+					<Link to='/'>
+					<button className="btn-sf-like">Main</button>
+					</Link>
+				</div>
+			</div>
+		</div>
+	);
+};
+
+const ResearchPage = () =>{
+	return(
+		<div className='ResearchPage'> 
+			<h1>Research</h1>
+			<div className='wrapper'>
+				<div className='list'>
+					<Link to='/'>
+					<button className="btn-sf-like">Main</button>
+					</Link>
+				</div>
+			</div>
+		</div>
+	);
+};
+
+const App = () => {
+		return(
+			<div>
+				<BrowserRouter>
+					<div>
+						<Route path='/' exact component={MainPage}/>
+						<Route path="/pagecarrer" component={CarrerPage}/>
+						<Route path="/pagereseach" component={ResearchPage}/>
+					</div>
+				</BrowserRouter>
+			</div>
+		);
+};
+
+ReactDOM.render(<App/>,document.getElementById('root'))
