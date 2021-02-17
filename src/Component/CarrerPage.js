@@ -1,8 +1,8 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import './index.css';
 import Button from '@material-ui/core/Button';
 import AppBar from './AppBar.js';
+import MediaCard from './MediaCard.js';
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
@@ -16,13 +16,17 @@ const useStyles = makeStyles((theme) => ({
     marginRight: 20,
   },
   research: {
-    marginLeft: 20,
+    marginLeft: 50,
+    marginTop: 50,
   },
   list: {
-    marginLeft: 50,
+    marginTop: 0,
   },
   linkbutton: {
     marginTop: 50,
+  },
+  cards: {
+				display:'flex',
   },
 }));
 
@@ -32,8 +36,12 @@ const CarrerPage = () =>{
 		return(
 				<div className='CarrerPage'> 
 				<AppBar/>
-				<h1>Carrer</h1>
-					<div className='wrapper'>
+				<h1>経歴 Carrer</h1>
+				<div className={classes.cards}>
+				<MediaCard name='開智高校 (2011-2014)' />
+				<MediaCard name='慶應大学 (2015-2019)' />
+				<MediaCard name='慶應大学院 (2019-2021)' />
+				</div>
 						<div className='list'>
 							<Link to='/'>
 								<Button variant="contained" color="primary" className={classes.research}>
@@ -41,7 +49,6 @@ const CarrerPage = () =>{
 								</Button>
 							</Link>
 						</div>
-					</div>
 				</div>
 	);
 };
