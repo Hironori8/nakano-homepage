@@ -7,7 +7,7 @@ import './index.css'
 const calc = (x, y) => [-(y - window.innerHeight / 2) / 20, (x - window.innerWidth / 2) / 20, 1.1]
 const trans = (x, y, s) => `perspective(600px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`
 
-const Card = () => {
+export default function Card(){
 	const [props, set] = useSpring(() => ({ xys: [0, 0, 1], config: { mass: 1, tension: 100, friction: 200 } }))
 	return (
 		<animated.div
@@ -19,4 +19,3 @@ const Card = () => {
 	);
 };
 
-export default Card;
