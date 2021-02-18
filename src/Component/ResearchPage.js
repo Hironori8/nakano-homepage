@@ -31,7 +31,7 @@ export default function ResearchPage(){
 		});
 		return(
 				<div className={classes.root}> 
-						<AppBar/>
+						<AppBar pagename='Research'/>
 						<animated.h1 style={spring}>研究テーマ Research</animated.h1>
 						<div className={classes.cards}>
 								<MediaCard name='NDN (Named Data Networking)' image="NDN.jpg"/>

@@ -38,7 +38,7 @@ export default function CarrerPage(){
 
 		return(
 				<div className='CarrerPage'> 
-				<AppBar/>
+				<AppBar pagename='Carrer'/>
 				<animated.h1 style={spring}>経歴 Carrer</animated.h1>
 						<Stepper/>
 						<div className='list'>

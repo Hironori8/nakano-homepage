@@ -37,7 +37,7 @@ export default function Selector() {
 		    reset: true,
 		  })
   return items.map(i => 
-				<Link to={url_items[i]}>
+				<Link to={url_items[i]} style={{textDecoration:'none'}}>
 						<animated.div 
 								key={i} 
 								className={classes.script_bf_box} 
