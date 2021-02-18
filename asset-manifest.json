@@ -1,21 +1,21 @@
 {
   "files": {
     "main.css": "/nakano-homepage/static/css/main.0067f17a.chunk.css",
-    "main.js": "/nakano-homepage/static/js/main.bc9278ef.chunk.js",
-    "main.js.map": "/nakano-homepage/static/js/main.bc9278ef.chunk.js.map",
+    "main.js": "/nakano-homepage/static/js/main.5a59fcd1.chunk.js",
+    "main.js.map": "/nakano-homepage/static/js/main.5a59fcd1.chunk.js.map",
     "runtime-main.js": "/nakano-homepage/static/js/runtime-main.647c1152.js",
     "runtime-main.js.map": "/nakano-homepage/static/js/runtime-main.647c1152.js.map",
-    "static/js/2.fa8c19ef.chunk.js": "/nakano-homepage/static/js/2.fa8c19ef.chunk.js",
-    "static/js/2.fa8c19ef.chunk.js.map": "/nakano-homepage/static/js/2.fa8c19ef.chunk.js.map",
+    "static/js/2.d92c246b.chunk.js": "/nakano-homepage/static/js/2.d92c246b.chunk.js",
+    "static/js/2.d92c246b.chunk.js.map": "/nakano-homepage/static/js/2.d92c246b.chunk.js.map",
     "index.html": "/nakano-homepage/index.html",
     "static/css/main.0067f17a.chunk.css.map": "/nakano-homepage/static/css/main.0067f17a.chunk.css.map",
-    "static/js/2.fa8c19ef.chunk.js.LICENSE.txt": "/nakano-homepage/static/js/2.fa8c19ef.chunk.js.LICENSE.txt",
+    "static/js/2.d92c246b.chunk.js.LICENSE.txt": "/nakano-homepage/static/js/2.d92c246b.chunk.js.LICENSE.txt",
     "static/media/index.css": "/nakano-homepage/static/media/mypicture.acf7221c.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.647c1152.js",
-    "static/js/2.fa8c19ef.chunk.js",
+    "static/js/2.d92c246b.chunk.js",
     "static/css/main.0067f17a.chunk.css",
-    "static/js/main.bc9278ef.chunk.js"
+    "static/js/main.5a59fcd1.chunk.js"
   ]
 }
