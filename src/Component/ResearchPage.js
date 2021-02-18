@@ -4,7 +4,7 @@ import Button from '@material-ui/core/Button';
 import AppBar from './AppBar.js';
 import { makeStyles } from '@material-ui/core/styles';
 import MediaCard from './MediaCard.js';
-import {useSpring, animated,config} from 'react-spring';
+import {useSpring, animated} from 'react-spring';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const ResearchPage = () =>{
+export default ResearchPage(){
 		const classes = useStyles();
 		const spring = useSpring({
 				opacity:1,
@@ -48,4 +48,3 @@ const ResearchPage = () =>{
 		);
 		};
 
-export default ResearchPage;

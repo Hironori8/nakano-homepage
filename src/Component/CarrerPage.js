@@ -4,7 +4,7 @@ import Button from '@material-ui/core/Button';
 import AppBar from './AppBar.js';
 import Stepper from './VerticalStepper.js';
 import { makeStyles } from '@material-ui/core/styles';
-import {useSpring, animated,config} from 'react-spring';
+import {useSpring, animated} from 'react-spring';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const CarrerPage = () =>{
+export default function CarrerPage(){
   const classes = useStyles();
 		const spring = useSpring({
 				opacity:1,
@@ -52,4 +52,3 @@ const CarrerPage = () =>{
 	);
 };
 
-export default CarrerPage;

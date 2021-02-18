@@ -1,9 +1,8 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
-import Button from '@material-ui/core/Button';
 import AppBar from './AppBar.js';
 import {makeStyles} from '@material-ui/core/styles';
 import Avatar from './Avatar.js';
+import Selector from './Selector.js';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -12,63 +11,25 @@ const useStyles = makeStyles((theme) => ({
   title: {
     flexGrow: 1,
   },
-  carrer: {
+		selector:{
 				display:'flex',
+				marginTop:50,
 				margin:'auto',
-				marginTop:20,
-  },
-  research: {
-				display:'flex',
-				margin:'auto',
-				marginTop:20,
-  },
-  git: {
-				display:'flex',
-				margin:'auto',
-				width: theme.spacing(30),
-				height: theme.spacing(30),
-  },
-  twitter: {
-				display:'flex',
-				margin:'auto',
-				width: theme.spacing(30),
-				height: theme.spacing(30),
-  },
-  instagram: {
-				display:'flex',
-				margin:'auto',
-    width: theme.spacing(30),
-    height: theme.spacing(30),
-  },
+				maxWidth: 400,
+		},
 }));
 
-const MainPage = () =>{
+export default function MainPage(){
   const classes = useStyles();
 
 		return(
 				<div className={classes.root}> 
 					<AppBar/>
 				 <Avatar/>
-					<Link to='/carrer'>
-						<Button 
-								variant="contained" 
-								color="primary" 
-								className={classes.carrer}
-						>
-							Carrer	
-						</Button>
-					</Link>
-					<Link to='/reseach'>
-						<Button 
-								variant="contained" 
-								color="primary" 
-								className={classes.research}
-						>
-							Research	
-						</Button>
-					</Link>
+						<div className={classes.selector}>
+								<Selector/>
+						</div>
 				</div>
 			);
 };
 
-export default MainPage;

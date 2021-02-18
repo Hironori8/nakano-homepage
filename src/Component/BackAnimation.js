@@ -4,7 +4,7 @@ import {BrowserRouter,Route,Link} from 'react-router-dom'
 import {useSpring, animated,useTransition} from 'react-spring'
 import './index.css'
 
-const BackAnimation = () => {
+export default function BackAnimation(){
 	const ref = useRef([])
 	// refは値を保持し続ける
 	const [items, set] = useState([])
@@ -42,4 +42,3 @@ const BackAnimation = () => {
 	);
 };
 
-export default BackAnimation;
