@@ -44,7 +44,7 @@ export default function CarrerPage(){
 						<div className='list'>
 							<Link to='/'>
 								<Button variant="contained" color="primary" className={classes.research}>
-									Main	
+									メインページへ戻る (Main)	
 								</Button>
 							</Link>
 						</div>
