@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function ButtonAppBar() {
+export default function ButtonAppBar(props) {
   const classes = useStyles();
 
   return (
@@ -27,12 +27,10 @@ export default function ButtonAppBar() {
       <AppBar position="static">
         <Toolbar>
           <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-            <MenuIcon />
           </IconButton>
           <Typography variant="h6" className={classes.title}>
-            Hironori Nakano 
+            Portfolio | Hironori Nakano | {props.pagename} 
           </Typography>
-          <Button color="inherit">Demo</Button>
         </Toolbar>
       </AppBar>
     </div>

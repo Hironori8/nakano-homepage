@@ -35,7 +35,7 @@ export default function MediaCard(props) {
 												{props.name} 
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-												デモページ
+											 近日公開 (coming soon)	
           </Typography>
         </CardContent>
       </CardActionArea>

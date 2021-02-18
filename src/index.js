@@ -5,6 +5,8 @@ import './index.css';
 import MainPage from './Component/MainPage.js';
 import CarrerPage from './Component/CarrerPage.js';
 import ResearchPage from './Component/ResearchPage.js';
+import BlogPage from './Component/BlogPage.js';
+import ContactPage from './Component/ContactPage.js';
 
 const App = () => {
     return(
@@ -14,6 +16,8 @@ const App = () => {
 				   <Route path='/' exact component={MainPage}/>
 				   <Route path="/carrer" component={CarrerPage}/>
 				   <Route path="/research" component={ResearchPage}/>
+				   <Route path="/blog" component={BlogPage}/>
+				   <Route path="/contact" component={ContactPage}/>
 				</div>
 			</BrowserRouter>
 		</div>

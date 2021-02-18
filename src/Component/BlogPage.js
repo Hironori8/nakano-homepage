@@ -10,25 +10,13 @@ const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
   },
-  title: {
-    flexGrow: 1,
-  },
-  carrer: {
-    marginRight: 20,
-  },
-  research: {
+  blog: {
     marginLeft: 50,
-    marginTop: 50,
-  },
-  list: {
-    marginTop: 0,
-  },
-  linkbutton: {
     marginTop: 50,
   },
 }));
 
-export default function CarrerPage(){
+export default function BlogPage(){
   const classes = useStyles();
 		const spring = useSpring({
 				opacity:1,
@@ -37,14 +25,13 @@ export default function CarrerPage(){
 		});
 
 		return(
-				<div className='CarrerPage'> 
-				<AppBar pagename='Carrer'/>
-				<animated.h1 style={spring}>経歴 Carrer</animated.h1>
-						<Stepper/>
+				<div className={classes.root}> 
+				<AppBar pagename='Blog'/>
+				<animated.h1 style={spring}>Blog ブログ</animated.h1>
 						<div className='list'>
 							<Link to='/'>
-								<Button variant="contained" color="primary" className={classes.research}>
-									メインページへ戻る (Main)	
+								<Button variant="contained" color="primary" className={classes.blog}>
+									メインページへ戻る（MAIN)	
 								</Button>
 							</Link>
 						</div>
