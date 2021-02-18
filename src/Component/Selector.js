@@ -5,8 +5,8 @@ import range from 'lodash-es/range'
 import {Link} from 'react-router-dom';
 
 const items = range(4)
-const print_items = ['Carrer','Research','Blog','Access']
-const url_items = ['/carrer','/research','/blog','/access']
+const print_items = ['Carrer','Research','Blog','Contact']
+const url_items = ['/carrer','/research','/blog','/contact']
 const interp = i => r => `translate3d(0, ${15 * Math.sin(r + (i * 2 * Math.PI) / 1.6)}px, 0)`
 
 const useStyles = makeStyles((theme) => ({
