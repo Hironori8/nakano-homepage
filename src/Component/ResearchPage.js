@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default ResearchPage(){
+export default function ResearchPage(){
 		const classes = useStyles();
 		const spring = useSpring({
 				opacity:1,
@@ -46,5 +46,5 @@ export default ResearchPage(){
 						</div>
 				</div>
 		);
-		};
+};
 
