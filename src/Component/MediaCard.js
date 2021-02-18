@@ -10,8 +10,10 @@ import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles({
   root: {
-    minWidth: 300,
+    minWidth: 400,
+    maxWidth: 400,
 				margin:'auto',
+    height: 600,
   },
   media: {
     height: 300,
@@ -26,7 +28,7 @@ export default function MediaCard(props) {
       <CardActionArea>
         <CardMedia
           className={classes.media}
-          image="mypicture.jpg"
+          image={props.image}
           title="Contemplative Reptile"
         />
         <CardContent>

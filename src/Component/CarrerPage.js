@@ -2,8 +2,9 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import Button from '@material-ui/core/Button';
 import AppBar from './AppBar.js';
-import MediaCard from './MediaCard.js';
+import Stepper from './VerticalStepper.js';
 import { makeStyles } from '@material-ui/core/styles';
+import {useSpring, animated,config} from 'react-spring';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -25,23 +26,21 @@ const useStyles = makeStyles((theme) => ({
   linkbutton: {
     marginTop: 50,
   },
-  cards: {
-				display:'flex',
-  },
 }));
 
 const CarrerPage = () =>{
   const classes = useStyles();
+		const spring = useSpring({
+				opacity:1,
+				from:{opacity:0},
+				delay:500,
+		});
 
 		return(
 				<div className='CarrerPage'> 
 				<AppBar/>
-				<h1>経歴 Carrer</h1>
-				<div className={classes.cards}>
-				<MediaCard name='開智高校 (2011-2014)' />
-				<MediaCard name='慶應大学 (2015-2019)' />
-				<MediaCard name='慶應大学院 (2019-2021)' />
-				</div>
+				<animated.h1 style={spring}>経歴 Carrer</animated.h1>
+						<Stepper/>
 						<div className='list'>
 							<Link to='/'>
 								<Button variant="contained" color="primary" className={classes.research}>
