@@ -43,7 +43,7 @@ export default function CarrerPage(){
 						<Stepper/>
 						<div className='list'>
 							<Link to='/'>
-								<Button variant="contained" color="primary" className={classes.research}>
+								<Button variant="outlined" color="primary" className={classes.research}>
 									メインページへ戻る (Main)	
 								</Button>
 							</Link>

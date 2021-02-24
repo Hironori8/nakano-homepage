@@ -7,13 +7,15 @@ import StepContent from '@material-ui/core/StepContent';
 import Button from '@material-ui/core/Button';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
+import Keio from './keio_univ.png';
+import Yahoo from './yahoo.png';
 
 const useStyles = makeStyles((theme) => ({
   root: {
     width: '100%',
   },
   button: {
-    marginTop: theme.spacing(1),
+    marginTop: theme.spacing(4),
     marginRight: theme.spacing(1),
   },
   actionsContainer: {
@@ -21,6 +23,11 @@ const useStyles = makeStyles((theme) => ({
   },
   resetContainer: {
     padding: theme.spacing(3),
+  },
+  logo: {
+    marginTop: theme.spacing(4),
+				maxHeight:300,
+				maxWidth:300,
   },
 }));
 
@@ -31,16 +38,36 @@ function getSteps() {
 function getStepContent(step) {
   switch (step) {
     case 0:
-						return '近日公開(coming soon)';
+						return (
+								'バスケットボール部所属'
+						);
     case 1:
-						return '近日公開(coming soon)';
+						return (
+								'理工学部 情報工学科 笹瀬研究室所属'
+						);
     case 2:
-						return '近日公開(coming soon)';
+						return '理工学研究科 環境解放科学専攻 笹瀬研究室所属';
     case 3:
 						return '近日公開(coming soon)';
     default:
       return 'Unknown step';
   }
+}
+function getStepImg(step, className){
+		switch (step){
+				case 1:
+						return (
+								<img src={Keio} className={className}/>
+						);
+				case 2:
+						return (
+								<img src={Keio} className={className}/>
+						);
+				case 3:
+						return (
+								<img src={Yahoo} className={className}/>
+						);
+		}
 }
 
 export default function VerticalLinearStepper() {
@@ -68,6 +95,7 @@ export default function VerticalLinearStepper() {
             <StepLabel>{label}</StepLabel>
             <StepContent>
               <Typography>{getStepContent(index)}</Typography>
+														<div>{getStepImg(index, classes.logo)}</div>
               <div className={classes.actionsContainer}>
                 <div>
                   <Button
@@ -78,12 +106,12 @@ export default function VerticalLinearStepper() {
                     Back
                   </Button>
                   <Button
-                    variant="contained"
+                    variant="outlined"
                     color="primary"
                     onClick={handleNext}
                     className={classes.button}
                   >
-                    {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
+                    Next
                   </Button>
                 </div>
               </div>
@@ -93,7 +121,6 @@ export default function VerticalLinearStepper() {
       </Stepper>
       {activeStep === steps.length && (
         <Paper square elevation={0} className={classes.resetContainer}>
-          <Typography>All steps completed - you&apos;re finished</Typography>
           <Button onClick={handleReset} className={classes.button}>
             Reset
           </Button>
