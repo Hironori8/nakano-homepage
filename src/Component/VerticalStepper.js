@@ -31,28 +31,51 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function getSteps() {
+function getStepsVerJP() {
   return ['開智高校 (2011-2014)', '慶應義塾大学 (2015-2019)', '慶應義塾大学大学院 (2019-2021)','Yahoo Japan (2021-)'];
 }
+function getStepsVerEng() {
+  return ['Kaichi High Sch. (2011-2014)', 'Keio Univ. (2015-2019)', 'Keio Univ. Grad. Sch. (2019-2021)','Yahoo Japan (2021-)'];
+}
+function getSteps(isEng){
+		if(isEng){
+				return getStepsVerEng();
+		}else{
+				return getStepsVerJP();
+		}
+}
 
-function getStepContent(step) {
+function getStepContent(step,isEng) {
   switch (step) {
     case 0:
-						return (
-								'バスケットボール部所属'
-						);
+						if(isEng){
+								return ('Member of Basketball Club');
+						}else{
+								return ('バスケットボール部所属');
+						}
     case 1:
-						return (
-								'理工学部 情報工学科 笹瀬研究室所属'
-						);
+						if(isEng){
+								return ('Faculity of Sci. and Tech. , Dept. Information and Comupter Sci. , Sasase Lab');
+						}else{
+								return ('理工学部 情報工学科 笹瀬研究室所属');
+						}
     case 2:
-						return '理工学研究科 環境解放科学専攻 笹瀬研究室所属';
+						if(isEng){
+								return ('Sch. of Sci. for Open and Environmental Systems, Center for Comupter Sci. , Sasase Lab.');
+						}else{
+								return ('開放環境科学専攻情報工学専修 笹瀬研究室所属');
+						}
     case 3:
-						return '近日公開(coming soon)';
+						if(isEng){
+								return 'Coming soon';
+						}else{
+								return '近日公開';
+						}
     default:
       return 'Unknown step';
   }
 }
+
 function getStepImg(step, className){
 		switch (step){
 				case 1:
@@ -74,10 +97,10 @@ function getStepImg(step, className){
 		}
 }
 
-export default function VerticalLinearStepper() {
+export default function VerticalLinearStepper(props) {
   const classes = useStyles();
   const [activeStep, setActiveStep] = React.useState(0);
-  const steps = getSteps();
+  const steps = getSteps(props.isEng);
 
   const handleNext = () => {
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
@@ -98,7 +121,7 @@ export default function VerticalLinearStepper() {
           <Step key={label}>
             <StepLabel>{label}</StepLabel>
             <StepContent>
-              <Typography>{getStepContent(index)}</Typography>
+              <Typography>{getStepContent(index,props.isEng)}</Typography>
 														<div>{getStepImg(index, classes.logo)}</div>
               <div className={classes.actionsContainer}>
                 <div>
