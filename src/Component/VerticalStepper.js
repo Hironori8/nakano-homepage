@@ -57,15 +57,19 @@ function getStepImg(step, className){
 		switch (step){
 				case 1:
 						return (
-								<img src={Keio} className={className}/>
+								<img src={Keio} className={className} alt ="Keio Logo"/>
 						);
 				case 2:
 						return (
-								<img src={Keio} className={className}/>
+								<img src={Keio} className={className} alt="Keio Logo"/>
 						);
 				case 3:
 						return (
-								<img src={Yahoo} className={className}/>
+								<img src={Yahoo} className={className} alt="Yahoo Logo"/>
+						);
+				default : 
+						return (
+								<p>no contents</p>
 						);
 		}
 }

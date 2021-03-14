@@ -17,19 +17,33 @@ const useStyles = makeStyles((theme) => ({
 				margin:'auto',
 				maxWidth: 400,
 		},
+		button:{
+				width:200,
+				height:100,
+		},
 }));
 
-export default function MainPage(){
+
+const Eng = () =>{
+		const selectIsEng = (state) => state.isEng;
+		return useSelector(selectIsEng,shallowEqual);
+}
+
+const MainPage = () => {
+
   const classes = useStyles();
 
-		return(
+
+		return (
 				<div className={classes.root}> 
-					<AppBar/>
-				 <Avatar/>
-						<div className={classes.selector}>
-								<Selector/>
-						</div>
+					<AppBar />
+					<Avatar />
+				<div className={classes.selector}>
+						<Selector key="selectorPage"/>
+				</div>
 				</div>
 			);
-};
+}
+export default MainPage
+
 

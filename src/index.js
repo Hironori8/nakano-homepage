@@ -1,27 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {BrowserRouter,Route} from 'react-router-dom';
 import './index.css';
-import MainPage from './Component/MainPage.js';
-import CarrerPage from './Component/CarrerPage.js';
-import ResearchPage from './Component/ResearchPage.js';
-import BlogPage from './Component/BlogPage.js';
-import ContactPage from './Component/ContactPage.js';
+import {Provider} from 'react-redux';
+import App from './Component/App';
+import configureStore from './stores/store';
 
-const App = () => {
-    return(
-		<div>
-			<BrowserRouter basename={process.env.PUBLIC_URL}>
-				<div>
-				   <Route path='/' exact component={MainPage}/>
-				   <Route path="/carrer" component={CarrerPage}/>
-				   <Route path="/research" component={ResearchPage}/>
-				   <Route path="/blog" component={BlogPage}/>
-				   <Route path="/contact" component={ContactPage}/>
-				</div>
-			</BrowserRouter>
-		</div>
-   );
-};
+const store = configureStore();
+console.log(store.getState());
 
-ReactDOM.render(<App/>,document.getElementById('root'))
+ReactDOM.render(
+		<Provider store={store}>
+				<App/>
+		</Provider>,
+		document.getElementById('root')
+);
