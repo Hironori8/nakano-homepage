@@ -9,6 +9,7 @@ const trans = (x, y, s) => `perspective(600px) rotateX(${x}deg) rotateY(${y}deg)
 
 export default function Card(){
 	const [props, set] = useSpring(() => ({ xys: [0, 0, 1], config: { mass: 1, tension: 100, friction: 200 } }))
+
 	return (
 		<animated.div
 			className="card"

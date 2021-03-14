@@ -2,7 +2,6 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import Button from '@material-ui/core/Button';
 import AppBar from './AppBar.js';
-import Stepper from './VerticalStepper.js';
 import { makeStyles } from '@material-ui/core/styles';
 import {useSpring, animated} from 'react-spring';
 
